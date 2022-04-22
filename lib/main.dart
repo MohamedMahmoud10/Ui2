@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:updatedui2/PageView.dart';
 import 'package:updatedui2/TextFormField1.dart';
 import 'splashScreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const MyApp());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences _prefs =  await SharedPreferences.getInstance();
+ bool? descion = _prefs.getBool('x') ;
+Widget _screen=(descion==null||descion==false)? PgaeView():MyApp();
+  runApp(_screen);
 }
 
 class MyApp extends StatelessWidget {
@@ -11,9 +18,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const   MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  SplashScreenDart(),
+      home:Scaffold(
+        appBar: AppBar(
+          title:  Text('Welcome'),
+
+        ),
+      ) ,
 
     );
   }

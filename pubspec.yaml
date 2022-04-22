@@ -27,6 +27,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  shared_preferences: ^2.0.13
+  page_view_dot_indicator: ^1.1.0
   splash_screen_view: ^3.0.0
   flutter:
     sdk: flutter
@@ -59,11 +61,13 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-assets:
-  assets/images/OIP.jpg
-  assets/images/8K.jpg
-
-
+  assets:
+    - images2/www.best-shara.net (1).jpg
+    - images2/www.best-shara.net (2).jpg
+    - images2/www.best-shara.net (13).jpg
+    - images2/www.best-shara.net (14).jpg
+    - images2/OIP.jpg
+    - images2/R.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
